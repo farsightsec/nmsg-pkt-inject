@@ -1,0 +1,5 @@
+nmsg-pkt-inject (0.1) debian-fsi; urgency=medium
+
+  * Initial release.
+
+ -- Henry Stern <stern@fsi.io>  Thu, 24 Sep 2015 10:24:32 -0300

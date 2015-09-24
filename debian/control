@@ -1,0 +1,15 @@
+Source: nmsg-pkt-inject
+Section: utils
+Priority: extra
+Maintainer: Farsight Security, Inc. <software@farsightsecurity.com>
+Build-Depends: debhelper (>= 9), libnmsg-dev
+Standards-Version: 3.9.5
+
+Package: nmsg-pkt-inject
+Section: utils
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends},
+Description: libpcap frame injection utility for NMSG ISC/pkt encoded data
+ This is nmsg-pkt-inject, a utility which reads packets encoded using the NMSG
+ ISC/pkt message type and injects them onto a live ethernet interface using the
+ libpcap pcap_inject() function.

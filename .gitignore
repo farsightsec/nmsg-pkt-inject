@@ -1,2 +1,6 @@
 *.o
 nmsg-pkt-inject
+debian/files
+debian/*.log
+debian/*.substvars
+debian/nmsg-pkt-inject

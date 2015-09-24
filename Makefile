@@ -1,6 +1,6 @@
 CC = gcc --std=gnu99
-CFLAGS = -O3 -ggdb -Wall -Wno-strict-aliasing -pthread -D_REENTRANT
-LDFLAGS = -lpthread -lpcap -lnmsg
+CFLAGS = -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -O3 -ggdb -Wall -Wno-strict-aliasing -pthread -D_REENTRANT
+LDFLAGS = -Wl,-z,relro -lpthread -lpcap -lnmsg
 
 BINS = nmsg-pkt-inject
 
@@ -13,6 +13,6 @@ NMSG_PKT_INJECT_OBJS = \
 nmsg-pkt-inject: $(NMSG_PKT_INJECT_OBJS)
 
 clean:
-	rm -f $(BINS) $(NMSG_PKT_INJECT)
+	rm -f $(BINS) $(NMSG_PKT_INJECT) *.o
 
 .PHONY: all clean
