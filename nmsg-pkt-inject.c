@@ -85,7 +85,7 @@ static argv_t args[] = {
 		ARGV_CHAR_P,
 		&iface,
 		"iface",
-		"output ISC/pkt data to ethernet interface" },
+		"output base/pkt data to ethernet interface" },
 
 	{ ARGV_LAST, 0, 0, 0, 0, 0 }
 };
@@ -137,8 +137,8 @@ process_msg(nmsg_message_t msg) {
 
 static void
 nmsg_callback(nmsg_message_t msg, void *user) {
-	if (nmsg_message_get_vid(msg) == NMSG_VENDOR_ISC_ID &&
-	    nmsg_message_get_msgtype(msg) == NMSG_VENDOR_ISC_PKT_ID)
+	if (nmsg_message_get_vid(msg) == NMSG_VENDOR_BASE_ID &&
+	    nmsg_message_get_msgtype(msg) == NMSG_VENDOR_BASE_PKT_ID)
 	{
 		process_msg(msg);
 	}
@@ -235,7 +235,7 @@ setup_io(void) {
 int
 main(int argc, char **argv) {
 	assert(nmsg_init() == nmsg_res_success);
-	assert(nmsg_msgmod_lookup_byname("ISC", "pkt") != NULL);
+	assert(nmsg_msgmod_lookup_byname("base", "pkt") != NULL);
 
 	setup_io();
 	process_args(argc, argv);
