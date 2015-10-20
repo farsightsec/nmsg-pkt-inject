@@ -1,3 +1,9 @@
+nmsg-pkt-inject (0.3) debian-fsi; urgency=medium
+
+  * Release under Apache 2.0 License
+
+ -- Henry Stern <stern@fsi.io>  Tue, 20 Oct 2015 11:30:24 -0300
+
 nmsg-pkt-inject (0.2) debian-fsi; urgency=medium
 
   * Swap base/* for ISC/*
